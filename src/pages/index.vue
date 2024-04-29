@@ -1,19 +1,5 @@
 <script setup lang="ts">
-interface MaisonRecord {
-  adresse: string;
-  collectionId: string;
-  collectionName: string;
-  created: string;
-  favori: boolean;
-  id: string;
-  image: string;
-  nbChambres: number;
-  nbSdb: number;
-  nomMaison: string;  
-  prix: number;
-  surface: number;
-  updated: string;
-}
+import type { MaisonRecord } from '@/types'
 
 const maisonsListe:MaisonRecord[] = [
   {
@@ -66,4 +52,6 @@ const maisonsListe:MaisonRecord[] = [
 
 <template>
   <h1 class="text-2xl">Bonjour monde !</h1>
+  <MaisonCard v-bind="maisonsListe[0]" />
+  <MaisonCard v-bind="maisonsListe[1]" />
 </template>
