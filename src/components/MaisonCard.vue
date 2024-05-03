@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { MaisonResponse } from '@/types'
+import type { MaisonResponse } from '@/pocketbase/types'
 
 defineProps<MaisonResponse>()
 </script>

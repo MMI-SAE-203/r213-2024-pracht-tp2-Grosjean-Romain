@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { MaisonRecord, MaisonResponse } from '@/types'
+import type { MaisonResponse } from '@/pocketbase/types'
 import MaisonCard from '@/components/MaisonCard.vue'
 
-const maisonsListe:MaisonRecord[] = [
+const maisonsListe:MaisonResponse[] = [
   {
     "adresse": "2821 Lake Sevilla, Palm Harbor, TX",
     "collectionId": "9pe33w2ha3wem99",
