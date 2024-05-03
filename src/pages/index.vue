@@ -46,6 +46,51 @@ const maisonsListe:MaisonRecord[] = [
     "prix": 4550,
         "surface": 80,
         "updated": "2024-04-02 13:52:17.823Z"
+  },
+   {
+    "adresse": "1234 Maple Street, Springfield, TX",
+    "collectionId": "sidpkt9hmbfwoeb",
+    "collectionName": "maison",
+    "created": "2024-05-01 10:30:45.621Z",
+    "favori": true,
+    "id": "s1zuhj19x8eb243",
+    "image": "maple_street_springfield_TX.png",
+    "nbChambres": 3,
+    "nbSdb": 2,
+    "nomMaison": "Maple Street",
+    "prix": 3800,
+    "surface": 110,
+    "updated": "2024-05-01 10:30:45.621Z"
+  },
+  {
+  "adresse": "456 Elmwood Avenue, Riverside, CA",
+  "collectionId": "sidpkt9hmbfwoeb",
+  "collectionName": "maison",
+  "created": "2024-05-15 09:45:22.318Z",
+  "favori": false,
+  "id": "s1zuhj19x8eb244",
+  "image": "elmwood_avenue_riverside_CA.png",
+  "nbChambres": 4,
+  "nbSdb": 3,
+  "nomMaison": "Elmwood Avenue",
+  "prix": 4200,
+  "surface": 150,
+  "updated": "2024-05-15 09:45:22.318Z"
+  },
+  {
+  "adresse": "789 Oakridge Road, Boulder, CO",
+  "collectionId": "sidpkt9hmbfwoeb",
+  "collectionName": "maison",
+  "created": "2024-06-10 14:20:30.512Z",
+  "favori": true,
+  "id": "s1zuhj19x8eb245",
+  "image": "oakridge_road_boulder_CO.png",
+  "nbChambres": 3,
+  "nbSdb": 2,
+  "nomMaison": "Oakridge Road",
+  "prix": 4000,
+  "surface": 120,
+  "updated": "2024-06-10 14:20:30.512Z"
   }
 ]
 </script>
