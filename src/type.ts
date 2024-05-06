@@ -1,4 +1,4 @@
-export interface MaisonResponse {
+export interface MaisonsResponse {
   adresse: string;
   collectionId: string;
   collectionName: string;

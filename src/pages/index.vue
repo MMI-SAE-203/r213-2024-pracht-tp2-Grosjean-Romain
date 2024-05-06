@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import type { MaisonResponse } from '@/pocketbase/types'
+import { Collections, type MaisonsResponse } from '@/pocketbase-types'
 import MaisonCard from '@/components/MaisonCard.vue'
 
-const maisonsListe:MaisonResponse[] = [
+const maisonsListe : MaisonsResponse[] = [
   {
     "adresse": "2821 Lake Sevilla, Palm Harbor, TX",
     "collectionId": "9pe33w2ha3wem99",
-    "collectionName": "maisons",
+    "collectionName": Collections. Maisons,
     "created": "2024-05-03 14:30:31.830Z",
     "favori": false,
     "id": "sidpkt9hmbfwoeb",
@@ -21,7 +21,7 @@ const maisonsListe:MaisonResponse[] = [
   {
     "adresse": "2699 Green Valley, Highland Lake",
     "collectionId": "9pe33w2ha3wem99",
-    "collectionName": "maisons",
+    "collectionName": Collections. Maisons,
     "created": "2024-05-03 14:32:48.568Z",
     "favori": true,
     "id": "hqeb8jkj5u20v99",
@@ -36,7 +36,7 @@ const maisonsListe:MaisonResponse[] = [
   {
     "adresse": "909 Woodland St, Michigan, IN",
     "collectionId": "9pe33w2ha3wem99",
-    "collectionName": "maisons",
+    "collectionName": Collections.Maisons,
     "created": "2024-05-03 14:34:43.107Z",
     "favori": false,
     "id": "up794sz45nbbbfh",
@@ -51,7 +51,7 @@ const maisonsListe:MaisonResponse[] = [
   {
     "adresse": "1234 Maple Street, Springfield, TX",
     "collectionId": "9pe33w2ha3wem99",
-    "collectionName": "maisons",
+    "collectionName": Collections. Maisons,
     "created": "2024-05-03 14:35:29.842Z",
     "favori": true,
     "id": "yht2d9yqxyhhdzf",
@@ -66,7 +66,7 @@ const maisonsListe:MaisonResponse[] = [
   {
     "adresse": "150",
     "collectionId": "9pe33w2ha3wem99",
-    "collectionName": "maisons",
+    "collectionName": Collections.Maisons,
     "created": "2024-05-03 14:37:18.805Z",
     "favori": false,
     "id": "48zih05vmxihy04",
@@ -81,7 +81,7 @@ const maisonsListe:MaisonResponse[] = [
   {
     "adresse": "789 Oakridge Road, Boulder, CO",
     "collectionId": "9pe33w2ha3wem99",
-    "collectionName": "maisons",
+    "collectionName": Collections.Maisons,
     "created": "2024-05-03 14:38:37.840Z",
     "favori": true,
     "id": "zgfhbonaln4zjt9",
@@ -98,7 +98,5 @@ const maisonsListe:MaisonResponse[] = [
 
 <template>
   <h1 class="text-2xl">Bonjour monde !</h1>
-  <MaisonCard v-bind="maisonsListe[0]" />
-  <MaisonCard v-bind="maisonsListe[1]" />
-  <MaisonCard v-for="maisonRecord in maisonsListe" :key="maisonRecord.nomMaison" v-bind="maisonRecord"/>
+  <MaisonCard v-for="maisonsRecord in maisonsListe" :key="maisonsRecord.nomMaison" v-bind="maisonsRecord" />
 </template>
