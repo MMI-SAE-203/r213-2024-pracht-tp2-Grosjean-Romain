@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type {MaisonsResponse} from '@/pocketbase-types'
 import ImgPb from './ImgPb.vue'
-const props = defineProps<MaisonsResponse>()
+const props = defineProps<MaisonsResponse<any>>()
 </script>
 
 <template>
@@ -29,8 +29,9 @@ const props = defineProps<MaisonsResponse>()
             Beverly Springfield
           </p>
         </div>
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"
-          class="flex-grow-0 flex-shrink-0 w-12 h-12" preserveAspectRatio="xMidYMid meet">
+        <svg width="48" height="48" viewBox="0 0 48 48" :fill="favori ? 'red' : 'none'"
+          xmlns="http://www.w3.org/2000/svg" class="flex-grow-0 flex-shrink-0 w-12 h-12"
+          preserveAspectRatio="xMidYMid meet">
           <circle cx="24" cy="24" r="23.25" fill="white" stroke="#E0E7FF" stroke-width="1.5"></circle>
           <path
             d="M16.318 18.318C15.9002 18.7359 15.5687 19.232 15.3425 19.778C15.1164 20.3239 15 20.9091 15 21.5C15 22.091 15.1164 22.6762 15.3425 23.2221C15.5687 23.7681 15.9002 24.2642 16.318 24.682L24 32.364L31.682 24.682C32.526 23.8381 33.0001 22.6935 33.0001 21.5C33.0001 20.3066 32.526 19.162 31.682 18.318C30.8381 17.4741 29.6935 17 28.5 17C27.3066 17 26.162 17.4741 25.318 18.318L24 19.636L22.682 18.318C22.2642 17.9002 21.7681 17.5687 21.2221 17.3425C20.6762 17.1164 20.091 17 19.5 17C18.9091 17 18.3239 17.1164 17.778 17.3425C17.232 17.5687 16.7359 17.9002 16.318 18.318V18.318Z"
@@ -40,14 +41,15 @@ const props = defineProps<MaisonsResponse>()
       <p class="self-stretch flex-grow-0 flex-shrink-0 w-[312px] text-base text-left text-gray-500">
         2821 Lake Sevilla, Palm Harbor, TX
       </p>
-      <svg width="312" height="2" viewBox="0 0 312 2" fill="none" xmlns="http://www.w3.org/2000/svg"
+      <svg width="312" height="2" viewBox="0 0 312 2" :fill="favori ? 'red' : 'none'" xmlns="http://www.w3.org/2000/svg"
         class="self-stretch flex-grow-0 flex-shrink-0" preserveAspectRatio="xMidYMid meet">
         <line y1="1.25" x2="312" y2="1.25" stroke="#E0E7FF" stroke-width="1.5"></line>
       </svg>
       <div class="flex justify-center items-center self-stretch flex-grow-0 flex-shrink-0 gap-1.5">
         <div class="flex justify-start items-center flex-grow relative gap-2">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
-            class="flex-grow-0 flex-shrink-0 w-5 h-5 relative" preserveAspectRatio="xMidYMid meet">
+          <svg width="20" height="20" viewBox="0 0 20 20" :fill="favori ? 'red' : 'none'"
+            xmlns="http://www.w3.org/2000/svg" class="flex-grow-0 flex-shrink-0 w-5 h-5 relative"
+            preserveAspectRatio="xMidYMid meet">
             <path
               d="M15 9.375H3.75V5.3125C3.75124 4.89848 3.91625 4.50177 4.20901 4.20901C4.50177 3.91625 4.89848 3.75124 5.3125 3.75H14.6875C15.1015 3.75124 15.4982 3.91625 15.791 4.20901C16.0837 4.50177 16.2488 4.89848 16.25 5.3125V9.375H15Z"
               stroke="#6366F1" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -61,7 +63,7 @@ const props = defineProps<MaisonsResponse>()
           <p class="flex-grow-0 flex-shrink-0 text-xs text-left text-gray-600">4 Beds</p>
         </div>
         <div class="flex justify-center items-center flex-grow relative gap-2">
-          <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+          <svg width="21" height="20" viewBox="0 0 21 20" :fill="favori ? 'red' : 'none'" xmlns="http://www.w3.org/2000/svg"
             class="flex-grow-0 flex-shrink-0 w-5 h-5 relative" preserveAspectRatio="xMidYMid meet">
             <g clip-path="url(#clip0_29323_902)">
               <path
@@ -84,7 +86,7 @@ const props = defineProps<MaisonsResponse>()
           <p class="flex-grow-0 flex-shrink-0 text-xs text-left text-gray-600">2 Bathrooms</p>
         </div>
         <div class="flex justify-end items-center flex-grow relative gap-2">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+          <svg width="20" height="20" viewBox="0 0 20 20" :fill="favori?'red':'none'" xmlns="http://www.w3.org/2000/svg"
             class="flex-grow-0 flex-shrink-0 w-5 h-5 relative" preserveAspectRatio="none">
             <g clip-path="url(#clip0_29323_913)">
               <path
