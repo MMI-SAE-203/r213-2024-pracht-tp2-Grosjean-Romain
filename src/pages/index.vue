@@ -3,8 +3,7 @@
 import MaisonCard from '@/components/MaisonCard.vue'
 import { pb } from '@/backend';
 
-const maisonsListe = await pb.collection("maisons").getFullList();
-console.log(maisonsListe);
+const maisonsListe = await pb.collection('maisons').getFullList({filter : 'favori = true'});
 </script>
 
 <template>
