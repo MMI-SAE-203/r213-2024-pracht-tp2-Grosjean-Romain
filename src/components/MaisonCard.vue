@@ -19,14 +19,14 @@ const props = defineProps<MaisonsResponse<any>>()
         <div class="flex-grow-0 flex-shrink-0 w-[249px] h-[75px]">
           <div class="flex justify-start items-end w-[164.11px] absolute left-0 top-0 gap-0.5">
             <p class="flex-grow-0 flex-shrink-0 text-2xl font-bold text-left text-indigo-500">
-              $2,700
+              ${{ prix }}
             </p>
             <p class="flex-grow-0 flex-shrink-0 w-[58px] h-8 text-base text-left text-gray-500">
               /month
             </p>
           </div>
           <p class="w-[249px] absolute left-0 top-[43px] text-2xl font-semibold text-left text-gray-900">
-            Beverly Springfield
+            {{ nomMaison }}
           </p>
         </div>
         <svg width="48" height="48" viewBox="0 0 48 48" :fill="favori ? 'red' : 'none'"
@@ -39,17 +39,16 @@ const props = defineProps<MaisonsResponse<any>>()
         </svg>
       </div>
       <p class="self-stretch flex-grow-0 flex-shrink-0 w-[312px] text-base text-left text-gray-500">
-        2821 Lake Sevilla, Palm Harbor, TX
+        {{ adresse }}
       </p>
-      <svg width="312" height="2" viewBox="0 0 312 2" :fill="favori ? 'red' : 'none'" xmlns="http://www.w3.org/2000/svg"
+      <svg width="312" height="2" viewBox="0 0 312 2" fill="white" xmlns="http://www.w3.org/2000/svg"
         class="self-stretch flex-grow-0 flex-shrink-0" preserveAspectRatio="xMidYMid meet">
         <line y1="1.25" x2="312" y2="1.25" stroke="#E0E7FF" stroke-width="1.5"></line>
       </svg>
       <div class="flex justify-center items-center self-stretch flex-grow-0 flex-shrink-0 gap-1.5">
         <div class="flex justify-start items-center flex-grow relative gap-2">
-          <svg width="20" height="20" viewBox="0 0 20 20" :fill="favori ? 'red' : 'none'"
-            xmlns="http://www.w3.org/2000/svg" class="flex-grow-0 flex-shrink-0 w-5 h-5 relative"
-            preserveAspectRatio="xMidYMid meet">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg"
+            class="flex-grow-0 flex-shrink-0 w-5 h-5 relative" preserveAspectRatio="xMidYMid meet">
             <path
               d="M15 9.375H3.75V5.3125C3.75124 4.89848 3.91625 4.50177 4.20901 4.20901C4.50177 3.91625 4.89848 3.75124 5.3125 3.75H14.6875C15.1015 3.75124 15.4982 3.91625 15.791 4.20901C16.0837 4.50177 16.2488 4.89848 16.25 5.3125V9.375H15Z"
               stroke="#6366F1" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -60,10 +59,10 @@ const props = defineProps<MaisonsResponse<any>>()
               d="M1.875 16.25V15.9375C1.87572 15.6891 1.97473 15.451 2.15038 15.2754C2.32604 15.0997 2.56408 15.0007 2.8125 15H17.1875C17.4359 15.0007 17.674 15.0997 17.8496 15.2754C18.0253 15.451 18.1243 15.6891 18.125 15.9375V16.25"
               stroke="#6366F1" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path>
           </svg>
-          <p class="flex-grow-0 flex-shrink-0 text-xs text-left text-gray-600">4 Beds</p>
+          <p class="flex-grow-0 flex-shrink-0 text-xs text-left text-gray-600">{{ nbChambres }}</p>
         </div>
         <div class="flex justify-center items-center flex-grow relative gap-2">
-          <svg width="21" height="20" viewBox="0 0 21 20" :fill="favori ? 'red' : 'none'" xmlns="http://www.w3.org/2000/svg"
+          <svg width="21" height="20" viewBox="0 0 21 20" fill="white" xmlns="http://www.w3.org/2000/svg"
             class="flex-grow-0 flex-shrink-0 w-5 h-5 relative" preserveAspectRatio="xMidYMid meet">
             <g clip-path="url(#clip0_29323_902)">
               <path
@@ -83,10 +82,10 @@ const props = defineProps<MaisonsResponse<any>>()
               </clipPath>
             </defs>
           </svg>
-          <p class="flex-grow-0 flex-shrink-0 text-xs text-left text-gray-600">2 Bathrooms</p>
+          <p class="flex-grow-0 flex-shrink-0 text-xs text-left text-gray-600">{{ nbSdb }}</p>
         </div>
         <div class="flex justify-end items-center flex-grow relative gap-2">
-          <svg width="20" height="20" viewBox="0 0 20 20" :fill="favori?'red':'none'" xmlns="http://www.w3.org/2000/svg"
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg"
             class="flex-grow-0 flex-shrink-0 w-5 h-5 relative" preserveAspectRatio="none">
             <g clip-path="url(#clip0_29323_913)">
               <path
@@ -103,7 +102,7 @@ const props = defineProps<MaisonsResponse<any>>()
               </clipPath>
             </defs>
           </svg>
-          <p class="flex-grow-0 flex-shrink-0 text-xs text-left text-gray-600">6x7.5 m²</p>
+          <p class="flex-grow-0 flex-shrink-0 text-xs text-left text-gray-600">{{ surface }}</p>
         </div>
       </div>
     </div>
