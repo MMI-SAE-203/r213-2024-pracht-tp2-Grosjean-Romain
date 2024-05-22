@@ -1,12 +1,18 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
-import MaisonCard from '@/components/MaisonCard.vue'
-import { pb } from '@/backend';
-
-const maisonsListe = await pb.collection('maisons').getFullList();
 </script>
 
 <template>
-    <h1 class="text-2xl">Bonjour monde !</h1>
-    <MaisonCard v-for="maisonsRecord in maisonsListe" :key="maisonsRecord.id" v-bind="maisonsRecord" />
+    <ul>
+        <li v-for="uneMaison in maisonsListe" :key="uneMaison.id">
+            <RouterLink :to="{
+                name: 'offre-details',
+                params: {
+                    id: uneMaison.id
+                }
+            }" class="text-red-400 hover:text-red-600">
+                {{ uneMaison.nomMaison }}
+            </RouterLink>
+        </li>
+    </ul>
 </template>
