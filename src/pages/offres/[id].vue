@@ -1,26 +1,19 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
+import { pb } from '@/backend';
+import { useRoute } from 'vue-router/auto';
 import MaisonCard from '@/components/MaisonCard.vue';
-import {useRoute} from 'vue-router/auto';
 
 const route = useRoute('/offres/[id]');
 console.log('id:', route.params.id);
 
-const uneMaison = await fetch('/api/maisons/$.{id}');
+const uneMaison = await pb.collection('maisons').getOne(route.params.id);
+console.log(uneMaison);
 </script>
 
 <template>
-  
-  <ul>
-    <li v-for="uneMaison of maisonsListe" :v-key="uneMaison.id">
-      <RouterLink :to="{
-        name: '/offres/[id]',
-        params: {
-        id: uneMaison.id
-        }
-      }" class="text-red-400 hover:text-red-600">
-        {{ uneMaison.nomMaison }}
-      </RouterLink>
-    </li>
-  </ul>
+  <div>
+    <h1 class="text-xl">Une maison</h1>
+    <MaisonCard v-bind="uneMaison" />
+  </div>
 </template>
