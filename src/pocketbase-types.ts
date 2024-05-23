@@ -7,6 +7,7 @@ import type { RecordService } from 'pocketbase'
 
 export enum Collections {
 	User = "User",
+	Agents = "agents",
 	Artistes = "artistes",
 	Events = "events",
 	Maisons = "maisons",
@@ -38,6 +39,12 @@ export type AuthSystemFields<T = never> = {
 
 export type UserRecord = {
 	nomMaison?: string
+}
+
+export type AgentsRecord = {
+	mail?: string
+	nom?: string
+	prenom?: string
 }
 
 export type ArtistesRecord = {
@@ -72,11 +79,13 @@ export type MaisonsRecord = {
 	nbSdb?: string
 	nomMaison?: string
 	prix?: number
+	relation_agent?: RecordIdString
 	surface?: number
 }
 
 // Response types include system fields and match responses from the PocketBase API
 export type UserResponse<Texpand = unknown> = Required<UserRecord> & AuthSystemFields<Texpand>
+export type AgentsResponse<Texpand = unknown> = Required<AgentsRecord> & BaseSystemFields<Texpand>
 export type ArtistesResponse<Texpand = unknown> = Required<ArtistesRecord> & BaseSystemFields<Texpand>
 export type EventsResponse<Texpand = unknown> = Required<EventsRecord> & BaseSystemFields<Texpand>
 export type MaisonsResponse<Texpand = unknown> = Required<MaisonsRecord> & BaseSystemFields<Texpand>
@@ -85,6 +94,7 @@ export type MaisonsResponse<Texpand = unknown> = Required<MaisonsRecord> & BaseS
 
 export type CollectionRecords = {
 	User: UserRecord
+	agents: AgentsRecord
 	artistes: ArtistesRecord
 	events: EventsRecord
 	maisons: MaisonsRecord
@@ -92,6 +102,7 @@ export type CollectionRecords = {
 
 export type CollectionResponses = {
 	User: UserResponse
+	agents: AgentsResponse
 	artistes: ArtistesResponse
 	events: EventsResponse
 	maisons: MaisonsResponse
@@ -102,6 +113,7 @@ export type CollectionResponses = {
 
 export type TypedPocketBase = PocketBase & {
 	collection(idOrName: 'User'): RecordService<UserResponse>
+	collection(idOrName: 'agents'): RecordService<AgentsResponse>
 	collection(idOrName: 'artistes'): RecordService<ArtistesResponse>
 	collection(idOrName: 'events'): RecordService<EventsResponse>
 	collection(idOrName: 'maisons'): RecordService<MaisonsResponse>
