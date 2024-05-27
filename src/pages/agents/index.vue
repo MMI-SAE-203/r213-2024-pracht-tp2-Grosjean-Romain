@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
 import { pb } from '@/backend';
-const agentsListe = await pb.collection('agents').getFullList();
+const agentsListe = await pb.collection("agents").getFullList();
 console.log(agentsListe);
 </script>
 

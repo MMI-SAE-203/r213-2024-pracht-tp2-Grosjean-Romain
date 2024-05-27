@@ -7,29 +7,31 @@ import type { AgentsResponse, MaisonsResponse } from '@/pocketbase-types';
 const route = useRoute('/agents/[id]');
 console.log('id:', route.params.id);
 
-const maisonAgent = await pb.collection<AgentsResponse<{ maisons: MaisonsResponse[]}>>("agents").getOne(route.params.id, {
-    expand: 'maisons'
+//const oneAgent = await pb.collection('agents').getOne(route.params.id);
+
+const agentWithMaison = await pb.collection<AgentsResponse<{maisons_via_agent: MaisonsResponse[]}>>("agents").getOne(route.params.id, {
+    expand: "maisons_via_agent"
 });
-console.log(maisonAgent);
+console.log("agent et ses maisons", agentWithMaison);
 
 </script>
 
 <template>
     <div>
-        <h1 class="text-xl">Offres dont il est responsable</h1>
-        <div v-if="maisonAgent.expand">
-        <ul>
-            <li v-for="uneMaison of maisonAgent.expand.maisons" :key="uneMaison.id">
-                <RouterLink :to="{
+        <h1 class="text-xl">Offres dont {{agentWithMaison.prenom}} est responsable</h1>
+        <div v-if="agentWithMaison.expand">
+            <ul>
+                <li v-for="uneMaison of agentWithMaison.expand.maisons_via_agent" :key="uneMaison.id">
+                    <RouterLink :to="{
                     name: '/offres/[id]',
                     params: {
                         id: uneMaison.id
                     }
                 }" class="text-red-400 hover:text-red-600">
-                    {{ uneMaison.nomMaison }}
-                </RouterLink>
-            </li>
-        </ul>
+                        {{uneMaison.nomMaison}}
+                    </RouterLink>
+                </li>
+            </ul>
         </div>
     </div>
 </template>
